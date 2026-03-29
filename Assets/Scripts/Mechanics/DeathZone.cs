@@ -12,6 +12,16 @@ namespace Platformer.Mechanics
     /// </summary>
     public class DeathZone : MonoBehaviour
     {
+        public AudioClip ouch;
+
+        internal AudioSource _audio;
+
+        void Awake()
+        {
+            _audio = GetComponent<AudioSource>();
+        }
+
+
         void OnTriggerEnter2D(Collider2D collider)
         {
             var p = collider.gameObject.GetComponent<PlayerController>();
